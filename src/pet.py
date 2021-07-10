@@ -222,7 +222,7 @@ class Pet():
 
     def update(self):
         if self.attributes.age < 0:
-            self.sprite.update(State.NORMAL)
+            self.sprite.update(State.EGG)
         else:
             state = self.attributes.states[-1]
             self.sprite.update(state)
