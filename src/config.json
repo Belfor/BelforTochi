@@ -1,0 +1,19 @@
+{
+    "attributes" :{
+        "temperature" : 25,
+        "max_vitality" : 100.0,
+        "max_hunger" : 100.0,
+        "hunger_decay" : 1,
+        "max_thrist" : 100.0,
+        "thrist_decay" : 1,
+        "max_sleep" : 100.0,
+        "sleep_decay" : 1,
+        "max_fun" :100.0,
+        "fun_decay" : 1,
+        "max_clean" : 100.0,
+        "clean_decay" : 1,
+        "biological_birthday_clock" : 20,
+        "digestion_time":20
+
+    }
+}

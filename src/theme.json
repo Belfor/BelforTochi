@@ -1,0 +1,70 @@
+{
+    "#comer":
+    {
+        "images":
+        {
+            "normal_image": 
+            {
+                "path":"../images/icons/comer.png"
+            }
+        }
+    },
+    "#beber":
+    {
+        "images":
+        {
+            "normal_image": 
+            {
+                "path":"../images/icons/beber.png"
+            }
+        }
+    },
+    "#jugar":
+    {
+        "images":
+        {
+            "normal_image": 
+            {
+                "path":"../images/icons/jugar.png"
+            }
+        }
+    },
+    "#curar":
+    {
+        "images":
+        {
+            "normal_image": 
+            {
+                "path":"../images/icons/curar.png"
+            }
+        }
+    },
+    "#shower":
+    {
+        "images":
+        {
+            "normal_image": 
+            {
+                "path":"../images/icons/shower.png"
+            }
+        }
+    },
+    "#caramelo":
+    {
+        "images":
+        {
+            "normal_image": 
+            {
+                "path":"../images/icons/caramelo.png"
+            }
+        }
+    },
+    "#infoText" :
+    {
+        "colours":{
+            "dark_bg": "#000000",
+            "normal_text": "#FFFFFF"
+        }
+    }
+
+}
