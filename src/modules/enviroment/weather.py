@@ -3,10 +3,10 @@ import json
 import datetime
 
 def weather():
-    api_key = "bd29eef97e25b00079ac1ba6acdb8893"
+    api_key = ""
 
     url = "https://api.openweathermap.org/data/2.5/weather"
-    querystring = {"lat":"41.383745","lon":"2.046644","appid":"bd29eef97e25b00079ac1ba6acdb8893","units":"metric","lang":"38"}
+    querystring = {"lat":"41.383745","lon":"2.046644","appid":"","units":"metric","lang":"38"}
     headers = {
         'Cache-Control': 'no-cache'
         }
