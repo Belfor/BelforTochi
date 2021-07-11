@@ -76,7 +76,6 @@ class PetSprite(pygame.sprite.Sprite):
             self.velocity_x = -self.velocity_x
         if self.rect.y < 35 or self.rect.y > self.size[1] - self.rect.height -35:
             self.velocity_y = -self.velocity_y
-            
 
 class PetAttributes():
 
@@ -117,60 +116,45 @@ class PetAttributes():
         if (state not in self.states):
             self.states.append(state)
 
-    def __basal_hunger(self):
-        if self.hunger < 0:
-            self.vitality +=  self.hunger * 0.8
-            self.__append_state(State.HUNGRY)
-        else:
-            self.__remove_state(State.HUNGRY)
+    def check_attribute(self,attribute, state):
+        if attribute > 150:
+            self.vitality -= 0.2
 
-    def __basal_thirst(self):
-        if (self.thirst < 0):
-            self.vitality +=  self.thirst * 0.8
-            self.__append_state(State.THIRST)
-        else:
-            self.__remove_state(State.THIRST)
+        if attribute < 25:
+            self.__append_state(state)
 
-    def __basal_sleep(self):
-        if (self.sleep < 0):
-            self.vitality +=  self.sleep * 0.5
-            self.__append_state(State.SLEEPY)
+            if attribute < 0:
+                self.vitality -= 0.2
         else:
-            self.__remove_state(State.SLEEPY)
+            self.__remove_state(state)
 
-
-    def __basal_fun(self):
-        if (self.fun < 0):
-            self.vitality +=  self.fun * 0.1
-            self.__append_state(State.BORING)
-        else:
-            self.__remove_state(State.BORING)
-    
-    def __basal_clean(self):
-        if (self.clean < 0):
-            self.vitality +=  self.clean * 0.3
-            self.__append_state(State.DIRTY)
-        else:
-            self.__remove_state(State.DIRTY)
+    def check_vitality(self):
+        if self.vitality < 25:
+            self.states.append(State.DISEASED)
+        if self.vitality < 0:
+            self.states.append(State.DEAD)
 
     def __basal_metabolism(self):
         self.step += 1
-        self.__remove_state(State.HAPPY)
-        self.__basal_hunger()
-        self.__basal_thirst()
-        self.__basal_sleep()
-        self.__basal_fun()
-        self.__basal_clean()
 
-        if self.vitality < 0:
-            self.states.append(State.DEAD)
+        self.__remove_state(State.HAPPY)
+        self.check_attribute(self.hunger,State.HUNGRY)
+        self.check_attribute(self.thirst,State.THIRST)
+        self.check_attribute(self.sleep,State.SLEEPY)
+        self.check_attribute(self.fun,State.BORING)
+        self.check_attribute(self.clean,State.DIRTY)
+       
+        self.check_vitality()
+
+        if self.age == -1 and self.step == 20:
+            self.age = 0
 
         if self.step == self.birthday:
             self.age += 1
             self.step = 0
 
     def biological_clock(self):
-        if State.DEAD not in self.states:
+        if State.DEAD not in self.states and self.age > -1:
             self.hunger -= self.hunger_decay
             self.thirst -= self.thrist_decay
             self.sleep -= self.sleep_decay
@@ -181,7 +165,7 @@ class PetAttributes():
                 self.poop_time -= 1
                 if self.poop_time == 0:
                     self.poop = True
-            self.__basal_metabolism()
+        self.__basal_metabolism()
 
     def modify(self, event):
         self.__append_state(event.state)

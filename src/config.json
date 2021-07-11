@@ -3,17 +3,17 @@
         "temperature" : 25,
         "max_vitality" : 100.0,
         "max_hunger" : 100.0,
-        "hunger_decay" : 1,
+        "hunger_decay" : 0.0000070,
         "max_thrist" : 100.0,
-        "thrist_decay" : 1,
+        "thrist_decay" : 0.0000070,
         "max_sleep" : 100.0,
-        "sleep_decay" : 1,
+        "sleep_decay" : 0.0000070,
         "max_fun" :100.0,
-        "fun_decay" : 1,
+        "fun_decay" : 0.0000070,
         "max_clean" : 100.0,
-        "clean_decay" : 1,
-        "biological_birthday_clock" : 20,
-        "digestion_time":20
+        "clean_decay" : 0.0000070,
+        "biological_birthday_clock" : 86400000,
+        "digestion_time":14400000
 
     }
 }
