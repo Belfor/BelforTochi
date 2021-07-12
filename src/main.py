@@ -21,7 +21,8 @@ if __name__ == "__main__":
     teal = 72,209,204
     black = 0,0,0
     pet = Pet("manolo",size)
-    screen = pygame.display.set_mode(size)
+    #screen = pygame.display.set_mode(size)
+    screen = pygame.display.set_mode((0, 0), pygame.FULLSCREEN)
     screen.fill(teal)
     bg = pygame.image.load('../images/bg/voodoo_cactus_underwater.jpg')
     pygame.draw.rect(screen,black,(0,0,x,34)) 
