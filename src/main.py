@@ -69,15 +69,15 @@ if __name__ == "__main__":
         for event in pygame.event.get():
             if event.type == UPDATE_PET:
                     pet.update()
-                    print(pet.attributes)
+         
 
             if event.type == CHANGE_ROUTE:
                     pet.change_route()
                     
             if event.type == BIOLOGICAL_CLOCK:
                     pet.biological_clock()
-                    print(pet.attributes)
-                    secret_info.set_text(str(pet.attributes))
+                    #print(pet.attributes)
+                   # secret_info.set_text(str(pet.attributes))
                     if pet.is_time_to_poop():
                         poops.append(pet.poop())
                    
