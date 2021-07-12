@@ -24,14 +24,14 @@ class PetSprite(pygame.sprite.Sprite):
         self.velocity_x = 1
         self.velocity_y = 1
        
-        self.egg = pygame.image.load('../images/egg.png')
+        self.egg = pygame.image.load_extended('../images/egg.png')
         self.sprites = []
-        self.sprites.append(pygame.image.load('../images/mermaid/normal.png'))
-        self.sprites.append(pygame.image.load('../images/mermaid/angry.png'))
-        self.sprites.append(pygame.image.load('../images/mermaid/angry_2.png'))
-        self.sprites.append(pygame.image.load('../images/mermaid/happy.png'))
+        self.sprites.append(pygame.image.load_extended('../images/mermaid/normal.png'))
+        self.sprites.append(pygame.image.load_extended('../images/mermaid/angry.png'))
+        self.sprites.append(pygame.image.load_extended('../images/mermaid/angry_2.png'))
+        self.sprites.append(pygame.image.load_extended('../images/mermaid/happy.png'))
        
-        self.sprite_dead = pygame.image.load('../images/TombStone.png')
+        self.sprite_dead = pygame.image.load_extended('../images/TombStone.png')
 
         self.current_sprite = self.egg
         self.rect = self.current_sprite.get_rect()

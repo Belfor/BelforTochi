@@ -36,11 +36,11 @@ class ItemAnimation():
         self.path_drinks = '../images/items/drink/'
         self.path_toys = '../images/items/toys/'
 
-        self.foods = [pygame.image.load(self.path_foods + food) for food in listdir(self.path_foods)]
-        self.potions = [pygame.image.load(self.path_potions + potion) for potion in listdir(self.path_potions)]
-        self.sweets = [pygame.image.load(self.path_sweets + sweet) for sweet in listdir(self.path_sweets)]
-        self.drinks = [pygame.image.load(self.path_drinks + drink) for drink in listdir(self.path_drinks)]
-        self.toys = [pygame.image.load(self.path_toys + toy) for toy in listdir(self.path_toys)]
+        self.foods = [pygame.image.load_extended(self.path_foods + food) for food in listdir(self.path_foods)]
+        self.potions = [pygame.image.load_extended(self.path_potions + potion) for potion in listdir(self.path_potions)]
+        self.sweets = [pygame.image.load_extended(self.path_sweets + sweet) for sweet in listdir(self.path_sweets)]
+        self.drinks = [pygame.image.load_extended(self.path_drinks + drink) for drink in listdir(self.path_drinks)]
+        self.toys = [pygame.image.load_extended(self.path_toys + toy) for toy in listdir(self.path_toys)]
         
 
     def return_animation(self,item,x,y):
